@@ -1,86 +1,70 @@
-<!DOCTYPE html>
-<html lang="tr">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Arşiv ve Tarihi Notlar | Adem Evren Kır</title>
-    <link rel="stylesheet" href="../style.css"> 
-</head>
-<body>
-    
-    <header>
-        <nav class="main-nav">
-            <a href="../index.html" class="logo">Platform Adı</a>
-            <ul>
-                <li><a href="hakkimda.html">Hakkımda</a></li>
-                <li><a href="arsiv.html">Arşiv</a></li>
-            </ul>
-            <button id="theme-toggle" onclick="toggleTheme()">
-                🌃 Karanlık Mod
-            </button>
-        </nav>
-    </header>
-
-    <main class="archive-page">
-        
-        <section class="hero-section">
-            <h1>Arşiv: Tarihten İlham Veren Notlar</h1>
-            <p>Uluslararası Ticaret ve Finans tarihi, felsefi dönüm noktaları ve teknolojiye ışık tutan ilginç bilgiler...</p>
-        </section>
-
-        <section class="archive-list">
+<section class="archive-list">
 
             <article class="archive-card">
-                <h3>Venedik'ten Çift Taraflı Muhasebe</h3>
-                <p class="archive-meta">Finans Tarihi | 15. Yüzyıl</p>
+                <div class="archive-header">
+                    <h3>Venedik'ten Çift Taraflı Muhasebe</h3>
+                    <p class="archive-meta">Finans Tarihi | 15. Yüzyıl</p>
+                </div>
                 <p class="archive-content">
                     Modern muhasebenin temeli olan **çift taraflı kayıt sistemi**, 15. yüzyılda Venedikli tüccarlar tarafından resmileştirildi. Bu sistem, sermaye birikiminin ve küresel ticaretin şeffaflığının temelini attı. **Basit bir kayıt sistemi, bir imparatorluk kurabilir mi?** Cevap: Evet!
                 </p>
             </article>
 
             <article class="archive-card">
-                <h3>Tulip Mania (Lale Çılgınlığı)</h3>
-                <p class="archive-meta">Ekonomi Balonu | 17. Yüzyıl (Hollanda)</p>
+                <div class="archive-header">
+                    <h3>Tulip Mania (Lale Çılgınlığı)</h3>
+                    <p class="archive-meta">Ekonomi Balonu | 17. Yüzyıl (Hollanda)</p>
+                </div>
                 <p class="archive-content">
-                    Tarihin ilk büyük ekonomik balonu olarak kabul edilir. Hollanda'da lale soğanlarının fiyatı, o dönemdeki ev fiyatlarını bile geride bıraktı. Ardından gelen çöküş, piyasa psikolojisinin rasyonellikten ne kadar uzaklaşabileceğini gösteren çarpıcı bir örnektir.
+                    Tarihin ilk büyük ekonomik balonu. Lale soğanlarının fiyatı ev fiyatlarını geride bıraktı. Çöküş, piyasa psikolojisinin rasyonellikten ne kadar uzaklaşabileceğini gösteren çarpıcı bir örnektir.
                 </p>
             </article>
 
             <article class="archive-card">
-                <h3>Bretton Woods Sistemi'nin Sonu</h3>
-                <p class="archive-meta">Uluslararası Finans | 1971</p>
+                <div class="archive-header">
+                    <h3>Bretton Woods Sistemi'nin Sonu</h3>
+                    <p class="archive-meta">Uluslararası Finans | 1971</p>
+                </div>
                 <p class="archive-content">
-                    ABD Başkanı Nixon'ın ABD dolarının altın karşılığını kaldırmasıyla, İkinci Dünya Savaşı sonrası kurulan sabit döviz kuru sistemi sona erdi ve günümüzün **dalgalı kur** sistemine geçiş başladı. Bu, küresel ekonomiyi derinden sarsan bir karardı.
+                    Nixon'ın doların altın karşılığını kaldırmasıyla sabit kur sistemi sona erdi. Bu karar, günümüzün **dalgalı kur** sistemine geçişi tetikledi ve küresel ekonomiyi derinden etkiledi.
                 </p>
             </article>
 
             <article class="archive-card">
-                <h3>Rothschild'ler ve Waterloo</h3>
-                <p class="archive-meta">Finansal İstihbarat | 1815</p>
+                <div class="archive-header">
+                    <h3>Rothschild'ler ve Waterloo</h3>
+                    <p class="archive-meta">Finansal İstihbarat | 1815</p>
+                </div>
                 <p class="archive-content">
-                    Rothschild ailesinin temsilcisi Nathan Rothschild, Waterloo Savaşı'nın sonucunu resmi haberden saatler önce öğrenerek İngiliz tahvil piyasasında devasa bir servet elde etti. Bilginin, finans dünyasındaki en değerli varlık olduğunu kanıtlayan destansı bir olay.
+                    Nathan Rothschild, Waterloo Savaşı'nın sonucunu herkesten önce öğrenerek İngiliz tahvil piyasasında devasa bir servet elde etti. Bilginin, finans dünyasındaki en değerli varlık olduğunu kanıtlayan olay.
                 </p>
             </article>
             
             <article class="archive-card">
-                <h3>Altın Standardı'nın Altın Çağı</h3>
-                <p class="archive-meta">Para Politikası | 1870-1914</p>
+                <div class="archive-header">
+                    <h3>Altın Standardı'nın Altın Çağı</h3>
+                    <p class="archive-meta">Para Politikası | 1870-1914</p>
+                </div>
                 <p class="archive-content">
-                    Birinci Dünya Savaşı'na kadar süren dönemde, çoğu ülke paranın değerini altınla sabitledi. Bu sistem, uluslararası ticareti kolaylaştırsa da, hükümetlerin ekonomik krize müdahale yeteneğini kısıtlıyordu. İstikrar mı, esneklik mi? Finansın ebedi sorunu.
+                    Birinci Dünya Savaşı'na kadar süren dönemde paranın değeri altınla sabitlendi. Bu, uluslararası ticareti kolaylaştırsa da, hükümetlerin krizlere müdahalesini kısıtlıyordu.
                 </p>
             </article>
             
             <article class="archive-card">
-                <h3>Federal Reserve'in Kuruluşu</h3>
-                <p class="archive-meta">Merkez Bankacılığı | 1913</p>
+                <div class="archive-header">
+                    <h3>Federal Reserve'in Kuruluşu</h3>
+                    <p class="archive-meta">Merkez Bankacılığı | 1913</p>
+                </div>
                 <p class="archive-content">
-                    ABD Merkez Bankası, panikleri önlemek, istikrarı sağlamak ve paranın dolaşımını yönetmek amacıyla kuruldu. Bugün dahi Fed'in kararları, uluslararası ticaret ve finans piyasalarını en çok etkileyen faktördür.
+                    ABD Merkez Bankası, panikleri önlemek ve istikrarı sağlamak amacıyla kuruldu. Bugün dahi Fed'in kararları, uluslararası ticaret ve finans piyasalarını en çok etkileyen faktördür.
                 </p>
             </article>
             
             <article class="archive-card">
-                <h3>İlk Ticaret Yolu: İpek Yolu</h3>
-                <p class="archive-meta">Uluslararası Ticaret | MÖ 2. Yüzyıl</p>
+                <div class="archive-header">
+                    <h3>İlk Ticaret Yolu: İpek Yolu</h3>
+                    <p class="archive-meta">Uluslararası Ticaret | MÖ 2. Yüzyıl</p>
+                </div>
                 <p class="archive-content">
                     Çin'den Akdeniz'e uzanan bu kadim ticaret ağı, sadece mal değil, aynı zamanda fikir, teknoloji ve kültür alışverişini de sağladı. Bugün e-ticaretin yaptığı şeyi, binlerce yıl önce atlar ve develer yapıyordu.
                 </p>
@@ -88,56 +72,70 @@
 
 
             <article class="archive-card">
-                <h3>Ada Lovelace: İlk Programcı</h3>
-                <p class="archive-meta">Kodlama Tarihi | 19. Yüzyıl</p>
+                <div class="archive-header">
+                    <h3>Ada Lovelace: İlk Programcı</h3>
+                    <p class="archive-meta">Kodlama Tarihi | 19. Yüzyıl</p>
+                </div>
                 <p class="archive-content">
-                    Charles Babbage'ın Analitik Makinesi'ne dair notlar yazan Lovelace, bir makinenin sadece matematiksel hesaplamalar yapmaktan öteye geçebileceğini öngördü. **Algoritma kavramını** formüle eden ilk kişi olması, vizyoner düşüncenin yüzlerce yıl öncesinden gelen kanıtıdır.
+                    Charles Babbage'ın Analitik Makinesi'ne dair notlar yazan Lovelace, bir makinenin sadece matematiksel hesaplamalar yapmaktan öteye geçebileceğini öngördü ve **Algoritma kavramını** formüle etti.
                 </p>
             </article>
 
             <article class="archive-card">
-                <h3>ENIAC'ın Kızları</h3>
-                <p class="archive-meta">Bilgisayar Tarihi | 1940'lar</p>
+                <div class="archive-header">
+                    <h3>ENIAC'ın Kızları</h3>
+                    <p class="archive-meta">Bilgisayar Tarihi | 1940'lar</p>
+                </div>
                 <p class="archive-content">
-                    İlk elektronik bilgisayarlardan ENIAC'ı programlayanlar, o dönemde bilim insanı olarak kabul edilmeyen bir grup yetenekli kadındı. Onların çalışmaları, modern yazılım mühendisliğinin temellerini sessizce attı.
+                    İlk elektronik bilgisayarlardan ENIAC'ı programlayanlar, modern yazılım mühendisliğinin temellerini sessizce atan yetenekli kadınlardı. Görünmez kahramanlar.
                 </p>
             </article>
 
             <article class="archive-card">
-                <h3>Moore Yasası ve Sınırları</h3>
-                <p class="archive-meta">Teknoloji Trendi | 1965</p>
+                <div class="archive-header">
+                    <h3>Moore Yasası ve Sınırları</h3>
+                    <p class="archive-meta">Teknoloji Trendi | 1965</p>
+                </div>
                 <p class="archive-content">
-                    Intel kurucu ortağı Gordon Moore'un gözlemi: Bir mikroçip üzerindeki transistör sayısı, yaklaşık her iki yılda bir ikiye katlanır. Bu "yasa," yarı iletken endüstrisine yön verdi, ancak fiziksel sınırlara yaklaşıyoruz.
+                    Intel kurucu ortağı Gordon Moore'un gözlemi: Bir mikroçip üzerindeki transistör sayısı, yaklaşık her iki yılda bir ikiye katlanır. Bu "yasa," yarı iletken endüstrisine yön verdi.
                 </p>
             </article>
 
             <article class="archive-card">
-                <h3>C Programlama Dili'nin Mirası</h3>
-                <p class="archive-meta">Yazılım Tarihi | 1972</p>
+                <div class="archive-header">
+                    <h3>C Programlama Dili'nin Mirası</h3>
+                    <p class="archive-meta">Yazılım Tarihi | 1972</p>
+                </div>
                 <p class="archive-content">
-                    Dennis Ritchie tarafından Bell Labs'ta geliştirilen C, modern işletim sistemlerinin (Linux, Windows çekirdeği) ve sayısız programlama dilinin (C++, Java, Python) temelini oluşturdu. Yalınlık ve verimlilik, C'yi hâlâ vazgeçilmez kılıyor.
+                    Dennis Ritchie tarafından Bell Labs'ta geliştirilen C, modern işletim sistemlerinin ve sayısız programlama dilinin (C++, Python) temelini oluşturdu.
                 </p>
             </article>
             
             <article class="archive-card">
-                <h3>World Wide Web'in Doğuşu</h3>
-                <p class="archive-meta">İnternet Tarihi | 1989</p>
+                <div class="archive-header">
+                    <h3>World Wide Web'in Doğuşu</h3>
+                    <p class="archive-meta">İnternet Tarihi | 1989</p>
+                </div>
                 <p class="archive-content">
-                    Tim Berners-Lee, CERN'de bilim insanlarının bilgi paylaşımını kolaylaştırmak için HTML, URL ve HTTP protokollerini icat etti. Başlangıçta sadece bilimsel bir araç olması amaçlanan Web, küresel ticaretin ve iletişim devriminin anahtarı oldu.
+                    Tim Berners-Lee, CERN'de HTML, URL ve HTTP protokollerini icat etti. Başlangıçta bilimsel bir araç olması amaçlanan Web, küresel ticaretin ve iletişim devriminin anahtarı oldu.
                 </p>
             </article>
             
             <article class="archive-card">
-                <h3>ASCII Kodunun Önemi</h3>
-                <p class="archive-meta">Bilişim Temeli | 1960'lar</p>
+                <div class="archive-header">
+                    <h3>ASCII Kodunun Önemi</h3>
+                    <p class="archive-meta">Bilişim Temeli | 1960'lar</p>
+                </div>
                 <p class="archive-content">
-                    Bilgisayarların metin, sembol ve sayıları birbirine standardize ederek iletişim kurmasını sağlayan ilk kodlama sistemi. Günümüz Unicode'unun atasıdır ve küresel bilgi akışının sessiz temelidir.
+                    Bilgisayarların metin, sembol ve sayıları birbirine standardize ederek iletişim kurmasını sağlayan ilk kodlama sistemi. Küresel bilgi akışının sessiz temelidir.
                 </p>
             </article>
             
             <article class="archive-card">
-                <h3>Shannon'ın Bilgi Teorisi</h3>
-                <p class="archive-meta">Matematik/Kodlama | 1948</p>
+                <div class="archive-header">
+                    <h3>Shannon'ın Bilgi Teorisi</h3>
+                    <p class="archive-meta">Matematik/Kodlama | 1948</p>
+                </div>
                 <p class="archive-content">
                     Claude Shannon'ın teorisi, bilginin miktarını ölçme ve iletme limitlerini belirledi. Tüm dijital iletişimin ve veri sıkıştırmanın matematiksel temelini oluşturur.
                 </p>
@@ -145,60 +143,63 @@
 
 
             <article class="archive-card">
-                <h3>Sokrates'in Savunması ve Yöntemi</h3>
-                <p class="archive-meta">Felsefe | MÖ 399</p>
+                <div class="archive-header">
+                    <h3>Sokrates'in Savunması ve Yöntemi</h3>
+                    <p class="archive-meta">Felsefe | MÖ 399</p>
+                </div>
                 <p class="archive-content">
-                    "Sorgulanmamış hayat yaşamaya değmez" diyen Sokrates'in diyalektik yöntemi, günümüzdeki **eleştirel düşünme** ve **problem çözme** süreçlerinin temelini oluşturur. Analiz yaparken, en temel varsayımlarınızı sorgulayın.
+                    "Sorgulanmamış hayat yaşamaya değmez" diyen Sokrates'in diyalektik yöntemi, günümüzdeki **eleştirel düşünme** ve **problem çözme** süreçlerinin temelini oluşturur.
                 </p>
             </article>
 
             <article class="archive-card">
-                <h3>Descartes ve 'Cogito'</h3>
-                <p class="archive-meta">Felsefe | 17. Yüzyıl</p>
+                <div class="archive-header">
+                    <h3>Descartes ve 'Cogito'</h3>
+                    <p class="archive-meta">Felsefe | 17. Yüzyıl</p>
+                </div>
                 <p class="archive-content">
-                    René Descartes'in meşhur "Düşünüyorum, o halde varım (Cogito ergo sum)" sözü, tüm kuşkuculuğun ortasında bile kesin olarak bilinebilecek tek şeyin kişinin kendi varlığı olduğu fikrini ortaya attı. Bu, modern felsefenin başlangıcıdır.
+                    "Düşünüyorum, o halde varım" sözü, tüm kuşkuculuğun ortasında bile kesin olarak bilinebilecek tek şeyin kişinin kendi varlığı olduğu fikrini ortaya attı. Modern felsefenin başlangıcı.
                 </p>
             </article>
 
             <article class="archive-card">
-                <h3>Popper'ın Yanlışlanabilirlik İlkesi</h3>
-                <p class="archive-meta">Bilim Felsefesi | 20. Yüzyıl</p>
+                <div class="archive-header">
+                    <h3>Popper'ın Yanlışlanabilirlik İlkesi</h3>
+                    <p class="archive-meta">Bilim Felsefesi | 20. Yüzyıl</p>
+                </div>
                 <p class="archive-content">
-                    Karl Popper'a göre, bir teorinin bilimsel olabilmesi için yanlışlanabilir olması gerekir. Yani, onu çürütecek bir deney tasarlanabilmelidir. Bu ilke, hem bilimde hem de finansal modellerin test edilmesinde kritik bir rol oynar.
+                    Bir teorinin bilimsel olabilmesi için yanlışlanabilir olması gerekir. Bu ilke, hem bilimde hem de finansal modellerin test edilmesinde kritik bir rol oynar.
                 </p>
             </article>
             
             <article class="archive-card">
-                <h3>Occam'ın Usturası (Ockham's Razor)</h3>
-                <p class="archive-meta">Mantık ve Felsefe | 14. Yüzyıl</p>
+                <div class="archive-header">
+                    <h3>Occam'ın Usturası (Ockham's Razor)</h3>
+                    <p class="archive-meta">Mantık ve Felsefe | 14. Yüzyıl</p>
+                </div>
                 <p class="archive-content">
-                    William Ockham'a atfedilen bu ilke, birden fazla açıklama varsa, **en az varsayıma sahip olanın** (en basit olanın) tercih edilmesi gerektiğini savunur. Bu, kod yazımında ve finansal modellemede **minimalizm** prensibinin felsefi temelidir.
+                    Birden fazla açıklama varsa, **en az varsayıma sahip olanın** (en basit olanın) tercih edilmesi gerektiğini savunur. Bu, kod yazımında **minimalizm** prensibinin felsefi temelidir.
                 </p>
             </article>
 
             <article class="archive-card">
-                <h3>Machiavelli'nin Pragmatizmi</h3>
-                <p class="archive-meta">Politik Felsefe | 16. Yüzyıl</p>
+                <div class="archive-header">
+                    <h3>Machiavelli'nin Pragmatizmi</h3>
+                    <p class="archive-meta">Politik Felsefe | 16. Yüzyıl</p>
+                </div>
                 <p class="archive-content">
-                    "Amaca ulaşmak için her yol mübah mıdır?" sorusunu ortaya atan Machiavelli, siyasi liderlerin etik yerine sonuçlara odaklanmasını savundu. Uluslararası ticaret ve finans kararlarındaki ahlaki ikilemleri anlamak için önemli bir kaynaktır.
+                    Amaca ulaşmak için sonuçlara odaklanmayı savundu. Uluslararası ticaret ve finans kararlarındaki ahlaki ikilemleri anlamak için önemli bir kaynaktır.
                 </p>
             </article>
             
             <article class="archive-card">
-                <h3>Kant'ın Kategorik İmperatifi</h3>
-                <p class="archive-meta">Etik Felsefesi | 18. Yüzyıl</p>
+                <div class="archive-header">
+                    <h3>Kant'ın Kategorik İmperatifi</h3>
+                    <p class="archive-meta">Etik Felsefesi | 18. Yüzyıl</p>
+                </div>
                 <p class="archive-content">
-                    Immanuel Kant'ın temel etik kuralı: Yaptığın eylemin, evrensel bir yasa olmasını isteyebilecek şekilde davran. Bu, iş ve kodlama etiğindeki evrensel standartları belirleme arayışımız için önemli bir kılavuzdur.
+                    Yaptığın eylemin, evrensel bir yasa olmasını isteyebilecek şekilde davran. Bu, iş ve kodlama etiğindeki evrensel standartları belirleme arayışımız için önemli bir kılavuzdur.
                 </p>
             </article>
 
         </section>
-
-    </main>
-
-    <footer>
-        <p>&copy; 2025 Platform Adı. Tüm Hakları Saklıdır.</p>
-    </footer>
-    <script src="../scripts.js" defer></script> 
-</body>
-</html>

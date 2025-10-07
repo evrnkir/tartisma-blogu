@@ -258,7 +258,7 @@ pre {
     color: var(--color-accent);
 }
 
-/* 6.5 ARŞİV SAYFASI VE KART STİLLERİ (YENİ EKLENDİ) */
+/* 6.5 ARŞİV SAYFASI VE KART STİLLERİ (YENİLENMİŞ, PROFESYONEL) */
 .archive-page {
     max-width: 1100px;
     margin: 40px auto;
@@ -267,41 +267,52 @@ pre {
 
 .archive-list {
     display: grid;
-    /* Kartların yan yana dizilimi (daha çok sığması için 280px min-width) */
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
     gap: 30px;
     padding-bottom: 50px;
 }
 
 .archive-card {
+    /* Yeni profesyonel görünüm */
     background-color: var(--color-light-bg);
-    padding: 25px;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+    border-radius: 12px; /* Köşeleri daha yumuşak */
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08); /* Daha belirgin gölge */
+    overflow: hidden; /* Kenarlıklar için */
+    transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
+    border: 1px solid #eee; /* Hafif bir çerçeve */
 }
 
 .archive-card:hover {
-    transform: translateY(-3px); 
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px); /* Daha güçlü vurgu */
+    box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
+    border-color: var(--color-accent); /* Vurgu rengi ile çerçeve */
+}
+
+.archive-header {
+    /* Başlık ve meta bilgisi için iç padding */
+    padding: 20px 20px 10px;
 }
 
 .archive-card h3 {
-    font-size: 1.4rem;
-    margin-bottom: 10px;
-    color: var(--color-accent); /* Başlık rengini vurgulu yap */
+    font-size: 1.5rem;
+    margin-bottom: 5px;
+    color: var(--color-primary); /* Başlık rengini birincil renge çevirdik */
+    line-height: 1.2;
 }
 
 .archive-meta {
-    font-size: 0.9rem;
-    color: #999;
-    margin-bottom: 15px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid #eee;
+    font-size: 0.8rem;
+    color: var(--color-secondary);
+    text-transform: uppercase;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    margin-bottom: 0;
 }
 
 .archive-content {
-    color: var(--color-primary);
+    /* İçerik paragrafı için ayrı padding */
+    padding: 0 20px 25px;
+    color: var(--color-secondary);
     line-height: 1.7;
     font-size: 1rem;
 }
@@ -390,7 +401,7 @@ body.dark-theme .post,
 body.dark-theme .hero-section,
 body.dark-theme .post-card,
 body.dark-theme .author-card,
-body.dark-theme .archive-card { /* ARŞİV KARTLARI EKLENDİ */
+body.dark-theme .archive-card { 
     background-color: var(--color-light-bg);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
 }
@@ -399,15 +410,19 @@ body.dark-theme .post-card:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
 }
 
+/* Karanlık Modda Arşiv Kartları Güncellemesi */
 body.dark-theme .archive-card {
-    border: 1px solid #333; /* Dark modda sınır ekleme */
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.7);
+    border-color: #333;
 }
-
+body.dark-theme .archive-card:hover {
+    border-color: var(--color-accent);
+}
 body.dark-theme .archive-card h3 {
-     color: var(--color-accent);
+     color: var(--color-primary); /* Başlığı Primary renginde tutarız */
 }
 body.dark-theme .archive-meta {
-     border-bottom-color: #333;
+     color: var(--color-secondary);
 }
 
 
@@ -463,7 +478,8 @@ body.dark-theme #theme-toggle {
     .hero-section h1 {
         font-size: 2rem;
     }
-    .posts-list, .archive-list { /* ARCHIVE LİST EKLENDİ */
+    /* Post ve Archive listeleri mobil tek sütun */
+    .posts-list, .archive-list {
         grid-template-columns: 1fr;
         gap: 20px;
     }
