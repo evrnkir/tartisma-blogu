@@ -88,10 +88,21 @@ header {
 }
 
 /* 4. MAKALELERİN GENEL DÜZENİ */
-.article-page {
-    max-width: 800px;
+
+/* YENİ! Yazar Kartı İçin Ana Grid Düzeni */
+.article-layout {
+    max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
+    display: grid;
+    /* Makale 3 birim, Sidebar 1 birim yer kaplasın */
+    grid-template-columns: 3fr 1fr; 
+    gap: 40px;
+}
+
+/* Makale içeriğini saran eski article-page'i sildik, post ve main-content kullanıyoruz */
+.main-content {
+    /* Makale ve Yorumlar buraya sığar */
 }
 
 .post {
@@ -100,6 +111,7 @@ header {
     border-radius: 8px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
     transition: background-color 0.3s, box-shadow 0.3s;
+    margin-bottom: 40px; /* Post ve Yorumlar arasına boşluk */
 }
 
 /* BAŞLIK, METİN VE BİLEŞEN STİLLERİ */
@@ -157,6 +169,7 @@ pre {
     border-top: 1px solid #eee;
     text-align: left;
 }
+
 /* Disqus entegre edildiği için önceki yer tutucuyu gizliyoruz */
 .comment-placeholder {
     display: none; 
@@ -260,14 +273,71 @@ footer {
     transition: border-top-color 0.3s;
 }
 
-/* 8. KARANLIK MOD STİLLERİ (DARK THEME) */
+/* 8. YAZAR KARTI (SIDEBAR) STİLLERİ */
+.sidebar {
+    /* Bu, kartın kaydırıldığında sabit kalmasını sağlar */
+    position: sticky;
+    top: 30px; 
+    height: fit-content; /* Sadece içeriği kadar yer kaplar */
+}
+
+.author-card {
+    background-color: var(--color-light-bg);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+    text-align: center;
+    transition: background-color 0.3s, box-shadow 0.3s;
+}
+
+.author-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: var(--color-accent); /* Yer tutucu olarak */
+    margin: 0 auto 15px;
+    border: 3px solid var(--color-accent);
+}
+
+.author-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+}
+
+.author-bio {
+    color: var(--color-secondary);
+    font-size: 0.95rem;
+    margin-bottom: 20px;
+}
+
+.social-links a {
+    font-size: 0.9rem;
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.btn-contact {
+    display: block;
+    margin-top: 15px;
+    background-color: var(--color-accent);
+    color: white !important;
+    padding: 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: background-color 0.2s;
+}
+
+
+/* 9. KARANLIK MOD STİLLERİ (DARK THEME) */
 body.dark-theme {
     /* Renk değişkenlerini karanlık moda göre yeniden tanımlayın */
-    --color-primary: #f0f0f0;    /* Açık Metin */
-    --color-secondary: #aaa;     /* Gri Metin */
-    --color-background: #121212; /* Koyu Arka Plan */
-    --color-light-bg: #1e1e1e;   /* Koyu Kart Arka Planı */
-    --color-accent: #8ab4f8;     /* Mavi Vurgu Rengi (daha parlak) */
+    --color-primary: #f0f0f0;    
+    --color-secondary: #aaa;     
+    --color-background: #121212; 
+    --color-light-bg: #1e1e1e;   
+    --color-accent: #8ab4f8;     
     color: var(--color-primary);
     background-color: var(--color-background);
 }
@@ -275,7 +345,8 @@ body.dark-theme {
 body.dark-theme header,
 body.dark-theme .post,
 body.dark-theme .hero-section,
-body.dark-theme .post-card {
+body.dark-theme .post-card,
+body.dark-theme .author-card { /* Yazar kartını ekledik */
     background-color: var(--color-light-bg);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
 }
@@ -303,34 +374,72 @@ body.dark-theme #theme-toggle {
     border-color: #666;
 }
 
-/* 9. MOBİL UYUMLULUK (Responsive Design) */
+/* 10. MOBİL UYUMLULUK (Responsive Design) İyileştirmesi */
 @media (max-width: 768px) {
+    /* Genel Düzeltmeler */
+    body {
+        font-size: 15px;
+    }
+    
+    /* Navigasyon İyileştirmesi (Dikey Yönlendirme) */
     .main-nav {
         flex-direction: column;
-        gap: 10px;
+        gap: 15px;
+        padding: 10px 20px;
     }
     .main-nav ul {
         gap: 15px;
+        padding: 0;
     }
-    .article-page {
+    #theme-toggle {
+        margin-top: 5px; 
+    }
+
+    /* Ana Sayfa: Tek Sütunlu Kartlar ve Küçük Başlık */
+    .home-page {
         margin: 20px auto;
+        padding: 0 15px;
     }
+    .hero-section {
+        padding: 40px 15px;
+        margin-bottom: 20px;
+    }
+    .hero-section h1 {
+        font-size: 2rem;
+    }
+    .posts-list {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    /* Makale Sayfası İyileştirmesi (Sidebar İçin Yeni Kurallar) */
+    .article-layout {
+        /* Mobil: Makale ve Sidebar alt alta gelsin */
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .sidebar {
+        /* Mobil: Sidebar artık sabit kalmasın ve makalenin üstünde gösterilsin */
+        position: static; 
+        order: -1; /* Makalenin üstüne çıkar */
+    }
+    
     .post {
         padding: 20px;
+        margin-bottom: 20px; /* Alttaki yorumlarla boşluk */
     }
     .post-header h1 {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
     .post-content p {
         font-size: 1rem;
     }
-    .posts-list {
-        grid-template-columns: 1fr; /* Mobil cihazlarda tek sütun */
+    .post-content h2 {
+        font-size: 1.5rem;
     }
-    .hero-section h1 {
-        font-size: 2.5rem;
-    }
-    #theme-toggle {
-        margin-top: 10px; /* Mobil menüde butonu ayır */
+    
+    /* Kod Blokları */
+    pre {
+        padding: 10px;
     }
 }
