@@ -88,14 +88,11 @@ header {
 }
 
 /* 4. MAKALELERİN GENEL DÜZENİ */
-
-/* YENİ! Yazar Kartı İçin Ana Grid Düzeni */
 .article-layout {
     max-width: 1200px;
     margin: 40px auto;
     padding: 0 20px;
     display: grid;
-    /* Makale 3 birim, Sidebar 1 birim yer kaplasın */
     grid-template-columns: 3fr 1fr; 
     gap: 40px;
 }
@@ -261,6 +258,54 @@ pre {
     color: var(--color-accent);
 }
 
+/* 6.5 ARŞİV SAYFASI VE KART STİLLERİ (YENİ EKLENDİ) */
+.archive-page {
+    max-width: 1100px;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.archive-list {
+    display: grid;
+    /* Kartların yan yana dizilimi (daha çok sığması için 280px min-width) */
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+    gap: 30px;
+    padding-bottom: 50px;
+}
+
+.archive-card {
+    background-color: var(--color-light-bg);
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s, background-color 0.3s;
+}
+
+.archive-card:hover {
+    transform: translateY(-3px); 
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+}
+
+.archive-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 10px;
+    color: var(--color-accent); /* Başlık rengini vurgulu yap */
+}
+
+.archive-meta {
+    font-size: 0.9rem;
+    color: #999;
+    margin-bottom: 15px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.archive-content {
+    color: var(--color-primary);
+    line-height: 1.7;
+    font-size: 1rem;
+}
+
 /* 7. FOOTER */
 footer {
     text-align: center;
@@ -274,10 +319,9 @@ footer {
 
 /* 8. YAZAR KARTI (SIDEBAR) STİLLERİ */
 .sidebar {
-    /* Bu, kartın kaydırıldığında sabit kalmasını sağlar */
     position: sticky;
     top: 30px; 
-    height: fit-content; /* Sadece içeriği kadar yer kaplar */
+    height: fit-content; 
 }
 
 .author-card {
@@ -293,7 +337,7 @@ footer {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-color: var(--color-accent); /* Yer tutucu olarak */
+    background-color: var(--color-accent); 
     margin: 0 auto 15px;
     border: 3px solid var(--color-accent);
 }
@@ -345,7 +389,8 @@ body.dark-theme header,
 body.dark-theme .post,
 body.dark-theme .hero-section,
 body.dark-theme .post-card,
-body.dark-theme .author-card { 
+body.dark-theme .author-card,
+body.dark-theme .archive-card { /* ARŞİV KARTLARI EKLENDİ */
     background-color: var(--color-light-bg);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
 }
@@ -353,6 +398,18 @@ body.dark-theme .author-card {
 body.dark-theme .post-card:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
 }
+
+body.dark-theme .archive-card {
+    border: 1px solid #333; /* Dark modda sınır ekleme */
+}
+
+body.dark-theme .archive-card h3 {
+     color: var(--color-accent);
+}
+body.dark-theme .archive-meta {
+     border-bottom-color: #333;
+}
+
 
 body.dark-theme footer {
     border-top-color: #333;
@@ -406,26 +463,24 @@ body.dark-theme #theme-toggle {
     .hero-section h1 {
         font-size: 2rem;
     }
-    .posts-list {
+    .posts-list, .archive-list { /* ARCHIVE LİST EKLENDİ */
         grid-template-columns: 1fr;
         gap: 20px;
     }
 
     /* Makale Sayfası İyileştirmesi (Sidebar İçin Yeni Kurallar) */
     .article-layout {
-        /* Mobil: Makale ve Sidebar alt alta gelsin */
         grid-template-columns: 1fr;
         gap: 20px;
     }
     .sidebar {
-        /* Mobil: Sidebar artık sabit kalmasın ve makalenin üstünde gösterilsin */
         position: static; 
-        order: -1; /* Makalenin üstüne çıkar */
+        order: -1; 
     }
     
     .post {
         padding: 20px;
-        margin-bottom: 20px; /* Alttaki yorumlarla boşluk */
+        margin-bottom: 20px; 
     }
     .post-header h1 {
         font-size: 1.8rem;
