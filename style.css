@@ -419,7 +419,7 @@ body.dark-theme .archive-card:hover {
     border-color: var(--color-accent);
 }
 body.dark-theme .archive-card h3 {
-     color: var(--color-primary); /* Başlığı Primary renginde tutarız */
+     color: var(--color-primary);
 }
 body.dark-theme .archive-meta {
      color: var(--color-secondary);

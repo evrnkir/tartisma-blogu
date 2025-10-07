@@ -42,17 +42,21 @@
                     </p>
 
                     <pre><code>
-                        :root {
-                            --main-color: #007bff;   /* Ana Vurgu Rengi */
-                            --text-primary: #1a1a1a; /* Temel Yazı Rengi */
-                            --border-radius-sm: 4px; /* Köşe Yuvarlaklığı */
-                        }
+/* Temel Renklerin ve Değerlerin Merkezi Tahsisi */
+:root {
+    --brand-blue: #007bff;          /* Marka Kimliği (Ana Vurgu Rengi) */
+    --base-font-size: 1.1rem;       /* Okunabilirlik Standardı */
+    --shadow-medium: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
 
-                        .btn-primary {
-                            background-color: var(--main-color); 
-                            color: white;
-                            border-radius: var(--border-radius-sm);
-                        }
+.card {
+    box-shadow: var(--shadow-medium);
+}
+
+h1 {
+    font-size: calc(2 * var(--base-font-size));
+    color: var(--brand-blue);
+}
                     </code></pre>
                     
                     <h2>2. Karanlık Modu Tek Satırda Yönetmek</h2>
@@ -61,13 +65,38 @@
                     </p>
                     
                     <pre><code>
-                        // JavaScript ile tema değiştirme mantığı
-                        function toggleTheme() {
-                            const body = document.body;
-                            body.classList.toggle('dark-theme');
-                            
-                            // Tema geçişi sırasında değişkenler otomatik değişir.
-                        }
+/* Tema geçişi için temel değişkenler */
+:root {
+    --bg-color: #f4f4f4;    /* Hafif Arka Plan */
+    --text-color: #1a1a1a;  /* Koyu Metin */
+}
+
+/* JavaScript ile eklenecek 'dark-theme' sınıfı */
+.dark-theme {
+    --bg-color: #121212;    /* Koyu Arka Plan */
+    --text-color: #f0f0f0;  /* Açık Metin */
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    transition: background-color 0.3s;
+}
+                    </code></pre>
+
+                    <pre><code>
+// JS ile 'dark-theme' sınıfını ekleyip/kaldırarak tema değerlerini değiştirme
+function toggleTheme() {
+    // DOM'da body elementini seç
+    const bodyElement = document.body; 
+    
+    // .dark-theme sınıfını ekle/kaldır
+    bodyElement.classList.toggle('dark-theme');
+    
+    // Kullanıcı tercihini yerel depolamada (LocalStorage) kaydet
+    const currentTheme = bodyElement.classList.contains('dark-theme') ? 'dark' : 'light';
+    localStorage.setItem('theme', currentTheme);
+}
                     </code></pre>
 
                     <blockquote>
