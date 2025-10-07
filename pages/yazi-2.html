@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Finans ve Kodlama: İki Dünya Arasındaki Köprü | Adem Evren Kır</title>
+    <link rel="stylesheet" href="../style.css"> 
+</head>
+<body>
+    
+    <header>
+        <nav class="main-nav">
+            <a href="../index.html" class="logo">Platform Adı</a>
+            <ul>
+                <li><a href="hakkimda.html">Hakkımda</a></li>
+                <li><a href="#">Arşiv</a></li>
+            </ul>
+            <button id="theme-toggle" onclick="toggleTheme()">
+                🌃 Karanlık Mod
+            </button>
+        </nav>
+    </header>
+
+    <main class="article-layout">
+        
+        <section class="main-content">
+            <article class="post">
+                
+                <header class="post-header">
+                    <h1>Finans ve Kodlama: İki Dünya Arasındaki Köprü</h1>
+                    <p class="post-meta">Yazar: Adem Evren Kır | <time datetime="2025-10-10">10 Ekim 2025</time></p>
+                </header>
+                
+                <section class="post-content">
+                    <p>
+                        Uluslararası Ticaret ve Finans okuyan biri olarak, yazılım dünyasının sunduğu imkanları görmezden gelmek mümkün değil. 
+                        Bu iki disiplin, göründüğünden çok daha iç içe geçmiş durumda. Bu yazıda, finansal analizi nasıl kodlamayla hızlandırdığımızı ve kariyerimde bu ikilinin neden hayati olduğunu anlatacağım.
+                    </p>
+                    
+                    <h2>1. Neden Kodlama Finansçı İçin Kritik?</h2>
+                    <p>
+                        Geleneksel finans, büyük veri setlerini analiz etmekte zorlanır. Python gibi dillerdeki araçlar (**Pandas, NumPy**) sayesinde binlerce hisse senedi verisini saniyeler içinde işleyebilir, karmaşık istatistiksel modelleri kolayca çalıştırabiliriz. Bu, sıradan bir finansçıdan sizi ayıran en büyük yetenek olacaktır.
+                    </p>
+                    
+                    <blockquote>
+                        "Bir finansal modelin karmaşıklığı, onun kodlanma kolaylığıyla ters orantılıdır. Amacımız hem güçlü hem de temiz kod yazmak olmalıdır."
+                    </blockquote>
+                    
+                    <h2>2. Motivasyon: Teknolojiyi Ekonomiye Taşımak</h2>
+                    <p>
+                        Beni asıl motive eden şey, teknolojinin ekonomik süreçleri nasıl demokratikleştirdiğini görmek. Blok zincirinden fintech uygulamalarına kadar, kodlama bilgisi size sadece bir kariyer değil, tüm finansal ekosistemi değiştirme gücü verir.
+                    </p>
+
+                    <pre><code>
+                        // Basit bir borsa verisi çekme örneği (Sadece bilgi amaçlı)
+                        import yfinance as yf
+
+                        hisse_senedi = "MSFT"
+                        veri = yf.download(hisse_senedi, start="2024-01-01", end="2025-01-01")
+
+                        print(veri.head())
+                    </code></pre>
+                    
+                    <p>
+                        Bu platformda, kariyer yolculuğumda karşılaştığım zorlukları, çözümleri ve bu iki dünyayı birleştiren yeni projelerimi düzenli olarak paylaşmayı hedefliyorum.
+                    </p>
+                </section>
+            </article>
+
+            <section id="comments" class="comments-section">
+                
+                <div id="disqus_thread"></div> 
+                
+                <script>
+                    var disqus_config = function () {
+                        this.page.url = window.location.href;  
+                        this.page.identifier = window.location.pathname; 
+                    };
+                    (function() {
+                        var d = document, s = d.createElement('script');
+                        // KENDİ KISA ADINIZLA DEĞİŞTİRİN
+                        s.src = 'https://tartisma-blogu.disqus.com/embed.js'; 
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Lütfen yorumları görmek için JavaScript'i etkinleştirin.</noscript>
+            </section>
+            
+        </section>
+
+        <aside class="sidebar">
+            <div class="author-card">
+                <div class="author-avatar"></div>
+                <h3>Adem Evren Kır</h3>
+                <p class="author-bio">
+                    Yazılımcı, felsefe meraklısı ve bu tartışma platformunun kurucusu. Web geliştirme, minimalist tasarım ve teknolojinin toplumsal etkileri üzerine yazıyorum.
+                </p>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/adem-evren-kir-362745329/" target="_blank">LinkedIn</a> | 
+                    <a href="#" target="_blank">Twitter/X</a>
+                </div>
+                
+                <a href="mailto:ademevrenkir@gmail.com" class="btn-contact">Bana Ulaş</a>
+            </div>
+        </aside>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Platform Adı. Tüm Hakları Saklıdır.</p>
+    </footer>
+    <script src="../scripts.js" defer></script> 
+</body>
+</html>
