@@ -23,72 +23,74 @@
 
     <main class="article-layout">
     
-    <section class="main-content">
-        
-        <article class="post">
+        <section class="main-content">
             
-            <header class="post-header">
-                <h1>Yazının Etkileyici Ana Başlığı Burada Olacak</h1>
-                <p class="post-meta">Yazar: [Adınız] | <time datetime="2025-10-07">7 Ekim 2025</time></p>
-            </header>
-            
-            <section class="post-content">
-                <p>Giriş paragrafı: Konuyu kısaca tanıtın...</p>
+            <article class="post">
                 
-                <h2>Alt Başlık 1: Detaylara Dalış</h2>
-                <p>Bu kısımda argümanlarınızı destekleyen metinler yer alacak. Projeniz artık bir tartışma platformu haline geldi. Yorumlarınızı bekliyoruz.</p>
+                <header class="post-header">
+                    <h1>Yazının Etkileyici Ana Başlığı Burada Olacak</h1>
+                    <p class="post-meta">Yazar: Adem Evren Kır | <time datetime="2025-10-07">7 Ekim 2025</time></p>
+                </header>
                 
-                <pre><code>
-                    // Örnek kod bloğu
-                    function merhaba() {
-                        console.log("Merhaba Dünya!");
-                    }
-                </code></pre>
+                <section class="post-content">
+                    <p>Giriş paragrafı: Konuyu kısaca tanıtın...</p>
+                    
+                    <h2>Alt Başlık 1: Detaylara Dalış</h2>
+                    <p>Bu kısımda argümanlarınızı destekleyen metinler yer alacak. Projeniz artık bir tartışma platformu haline geldi. Yorumlarınızı bekliyoruz.</p>
+                    
+                    <pre><code>
+                        // Örnek kod bloğu
+                        function merhaba() {
+                            console.log("Merhaba Dünya!");
+                        }
+                    </code></pre>
+                    
+                    <blockquote>
+                        "İnsanlar, bu platformda fikirlerini özgürce beyan edebilmeli." - [Kişi Adı]
+                    </blockquote>
+                </section>
+            </article>
+
+            <section id="comments" class="comments-section">
                 
-                <blockquote>
-                    "İnsanlar, bu platformda fikirlerini özgürce beyan edebilmeli." - [Kişi Adı]
-                </blockquote>
+                <div id="disqus_thread"></div> 
+                
+                <script>
+                    // Bu koddaki [SİZİN-DISQUS-SHORTNAME] kısmını kendi kısa adınızla değiştirmeyi unutmayın!
+                    var disqus_config = function () {
+                        this.page.url = window.location.href;  
+                        this.page.identifier = window.location.pathname; 
+                    };
+                    (function() {
+                        var d = document, s = d.createElement('script');
+                        s.src = 'https://tartisma-blogu.disqus.com/embed.js'; 
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Lütfen yorumları görmek için JavaScript'i etkinleştirin.</noscript>
             </section>
-        </article>
-
-        <section id="comments" class="comments-section">
             
-            <div id="disqus_thread"></div> 
-            
-            <script>
-                var disqus_config = function () {
-                    this.page.url = window.location.href;  
-                    this.page.identifier = window.location.pathname; 
-                };
-                (function() {
-                    var d = document, s = d.createElement('script');
-                    // KENDİ KISA ADINIZLA DEĞİŞTİRİN
-                    s.src = 'https://tartisma-blogu.disqus.com/embed.js'; 
-                    s.setAttribute('data-timestamp', +new Date());
-                    (d.head || d.body).appendChild(s);
-                })();
-            </script>
-            <noscript>Lütfen yorumları görmek için JavaScript'i etkinleştirin.</noscript>
         </section>
-        
-    </section>
 
-    <aside class="sidebar">
-        <div class="author-card">
-            <div class="author-avatar"></div>
-            <h3>[SİZİN ADINIZ]</h3>
-            <p class="author-bio">Yazılımcı, felsefe meraklısı ve tartışma platformu kurucusu. Web geliştirme ve minimalist tasarım üzerine yazıyorum.</p>
-            
-            <div class="social-links">
-                <a href="#" target="_blank">Twitter</a> | 
-                <a href="#" target="_blank">LinkedIn</a>
+        <aside class="sidebar">
+            <div class="author-card">
+                <div class="author-avatar"></div>
+                <h3>Adem Evren Kır</h3>
+                <p class="author-bio">
+                    Yazılımcı, felsefe meraklısı ve bu tartışma platformunun kurucusu. Web geliştirme, minimalist tasarım ve teknolojinin toplumsal etkileri üzerine yazıyorum.
+                </p>
+                
+                <div class="social-links">
+                    <a href="https://www.linkedin.com/in/adem-evren-kir-362745329/" target="_blank">LinkedIn</a> | 
+                    <a href="#" target="_blank">Twitter/X</a>
+                </div>
+                
+                <a href="mailto:ademevrenkir@gmail.com" class="btn-contact">Bana Ulaş</a>
             </div>
-            
-            <a href="#" class="btn-contact">Bana Ulaş</a>
-        </div>
-    </aside>
+        </aside>
 
-</main>
+    </main>
 
     <footer>
         <p>&copy; 2025 Platform Adı. Tüm Hakları Saklıdır.</p>

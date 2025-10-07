@@ -100,7 +100,6 @@ header {
     gap: 40px;
 }
 
-/* Makale içeriğini saran eski article-page'i sildik, post ve main-content kullanıyoruz */
 .main-content {
     /* Makale ve Yorumlar buraya sığar */
 }
@@ -346,7 +345,7 @@ body.dark-theme header,
 body.dark-theme .post,
 body.dark-theme .hero-section,
 body.dark-theme .post-card,
-body.dark-theme .author-card { /* Yazar kartını ekledik */
+body.dark-theme .author-card { 
     background-color: var(--color-light-bg);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
 }
