@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yazının Etkileyici Başlığı | Yazar Platformu</title>
+    <title>Sürdürülebilir Kodlama: CSS Değişkenleri Neden Kritik? | Adem Evren Kır</title>
     <link rel="stylesheet" href="../style.css"> 
 </head>
 <body>
@@ -12,8 +12,8 @@
         <nav class="main-nav">
             <a href="../index.html" class="logo">Platform Adı</a>
             <ul>
-                <li><a href="#">Hakkımda</a></li>
-                <li><a href="#">Arşiv</a></li>
+                <li><a href="hakkimda.html">Hakkımda</a></li>
+                <li><a href="arsiv.html">Arşiv</a></li>
             </ul>
             <button id="theme-toggle" onclick="toggleTheme()">
                 🌃 Karanlık Mod
@@ -22,32 +22,66 @@
     </header>
 
     <main class="article-layout">
-    
+        
         <section class="main-content">
-            
             <article class="post">
                 
                 <header class="post-header">
-                    <h1>Yazının Etkileyici Ana Başlığı Burada Olacak</h1>
+                    <h1>Neden Sürdürülebilir Kodlama Geleceğin Anahtarı? CSS Değişkenleri</h1>
                     <p class="post-meta">Yazar: Adem Evren Kır | <time datetime="2025-10-07">7 Ekim 2025</time></p>
                 </header>
                 
                 <section class="post-content">
-                    <p>Giriş paragrafı: Konuyu kısaca tanıtın...</p>
+                    <p>
+                        Teknoloji sürekli değişirken, yazdığımız kodun da bu hıza ayak uydurması gerekiyor. Bir üniversite öğrencisi ve hevesli bir geliştirici olarak, projelerimde en çok önemsediğim şey **sürdürülebilirlik** ve **okunabilirlik**. CSS değişkenleri (ya da resmi adıyla CSS Özel Özellikleri) tam da bu iki kritik ihtiyacı karşılayan basit ama güçlü bir araçtır.
+                    </p>
                     
-                    <h2>Alt Başlık 1: Detaylara Dalış</h2>
-                    <p>Bu kısımda argümanlarınızı destekleyen metinler yer alacak. Projeniz artık bir tartışma platformu haline geldi. Yorumlarınızı bekliyoruz.</p>
-                    
+                    <h2>1. Değişkenler: Tekrarlanan İşlerin Sonu</h2>
+                    <p>
+                        Büyük ölçekli bir projede ana rengi, font boyutunu ya da gölgelendirmeyi yüzlerce kez tanımlamak zorundasınız. CSS değişkenleri, bu değerleri merkezi bir yerde tutarak, tema değişikliklerini ve bakım süreçlerini kökten basitleştirir. Bu, finansal bir raporlamada sürekli kullanılan sabitleri tek bir hücrede tutmaya benzer.
+                    </p>
+
                     <pre><code>
-                        // Örnek kod bloğu
-                        function merhaba() {
-                            console.log("Merhaba Dünya!");
+                        :root {
+                            --main-color: #007bff;   /* Ana Vurgu Rengi */
+                            --text-primary: #1a1a1a; /* Temel Yazı Rengi */
+                            --border-radius-sm: 4px; /* Köşe Yuvarlaklığı */
+                        }
+
+                        .btn-primary {
+                            background-color: var(--main-color); 
+                            color: white;
+                            border-radius: var(--border-radius-sm);
                         }
                     </code></pre>
                     
+                    <h2>2. Karanlık Modu Tek Satırda Yönetmek</h2>
+                    <p>
+                        CSS değişkenlerinin en büyük gücü, **temaları dinamik olarak değiştirebilmesidir**. JavaScript ile `:root` veya `body` elementindeki değişken değerlerini güncelleyerek, tüm sitenizin görünümünü anında değiştirebilirsiniz. Karanlık modun uygulanması, değişkenler sayesinde sadece birkaç satırlık JS koduyla çözülebilir hale gelir:
+                    </p>
+                    
+                    <pre><code>
+                        // JavaScript ile tema değiştirme mantığı
+                        function toggleTheme() {
+                            const body = document.body;
+                            body.classList.toggle('dark-theme');
+                            
+                            // Tema geçişi sırasında değişkenler otomatik değişir.
+                        }
+                    </code></pre>
+
                     <blockquote>
-                        "İnsanlar, bu platformda fikirlerini özgürce beyan edebilmeli." - [Kişi Adı]
+                        "Sürdürülebilir kod, sadece bugünün değil, geleceğin ihtiyaçlarını da öngörerek yazılan koddur. CSS değişkenleri, geleceğe yapılan küçük ama çok değerli bir yatırımdır."
                     </blockquote>
+                    
+                    <h2>3. Finans ve Kodlama Perspektifinden Değişkenler</h2>
+                    <p>
+                        Uluslararası Ticaret ve Finans okuyan biri olarak, bu konuya biraz da analitik bir bakış açısıyla yaklaşıyorum: Değişken kullanmak, kodunuzun **teknik borcunu (Technical Debt)** azaltır. Teknik borç, gelecekteki bakım ve geliştirme maliyetlerini temsil eder. Tekrarlanan kod yerine değişken kullanmak, uzun vadede zaman ve kaynak tasarrufu demektir. Bu, kodlamadaki en basit **maliyet-etkinlik (cost-efficiency)** prensiplerinden biridir.
+                    </p>
+                    <p>
+                        Özetle, CSS değişkenleri modern web geliştirmenin temel direklerinden biridir. Projelerinizi daha düzenli, bakımı kolay ve geleceğe hazır hale getirerek, geliştirici kariyerinizde önemli bir fark yaratacaktır. 
+                    </p>
+                    
                 </section>
             </article>
 
@@ -56,13 +90,13 @@
                 <div id="disqus_thread"></div> 
                 
                 <script>
-                    // Bu koddaki [SİZİN-DISQUS-SHORTNAME] kısmını kendi kısa adınızla değiştirmeyi unutmayın!
                     var disqus_config = function () {
                         this.page.url = window.location.href;  
                         this.page.identifier = window.location.pathname; 
                     };
                     (function() {
                         var d = document, s = d.createElement('script');
+                        // KENDİ KISA ADINIZLA DEĞİŞTİRİN
                         s.src = 'https://tartisma-blogu.disqus.com/embed.js'; 
                         s.setAttribute('data-timestamp', +new Date());
                         (d.head || d.body).appendChild(s);
@@ -78,7 +112,7 @@
                 <div class="author-avatar"></div>
                 <h3>Adem Evren Kır</h3>
                 <p class="author-bio">
-                    Yazılımcı, felsefe meraklısı ve bu tartışma platformunun kurucusu. Web geliştirme, minimalist tasarım ve teknolojinin toplumsal etkileri üzerine yazıyorum.
+                    Uluslararası Ticaret ve Finans öğrencisi, meraklı geliştirici. Sürdürülebilir kodlama, finansal teknoloji (FinTech) ve küresel ekonomi trendleri üzerine yazıyor.
                 </p>
                 
                 <div class="social-links">
@@ -95,7 +129,6 @@
     <footer>
         <p>&copy; 2025 Platform Adı. Tüm Hakları Saklıdır.</p>
     </footer>
-    
     <script src="../scripts.js" defer></script> 
 </body>
 </html>
