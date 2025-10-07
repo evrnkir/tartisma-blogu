@@ -1,51 +1,79 @@
-<header>
-    <nav class="main-nav">
-        <a href="../index.html" class="logo">Platform Adı</a>
-        <ul>
-            <li><a href="#">Hakkımda</a></li>
-            <li><a href="#">Arşiv</a></li>
-        </ul>
-    </nav>
-</header>
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yazının Etkileyici Başlığı | Yazar Platformu</title>
+    <link rel="stylesheet" href="../style.css"> 
+</head>
+<body>
+    
+    <header>
+        <nav class="main-nav">
+            <a href="../index.html" class="logo">Platform Adı</a>
+            <ul>
+                <li><a href="#">Hakkımda</a></li>
+                <li><a href="#">Arşiv</a></li>
+            </ul>
+            <button id="theme-toggle" onclick="toggleTheme()">
+                🌃 Karanlık Mod
+            </button>
+        </nav>
+    </header>
 
-<main class="article-page">
-    <article class="post">
-        
-        <header class="post-header">
-            <h1>Yazının Etkileyici Ana Başlığı Burada Olacak</h1>
-            <p class="post-meta">Yazar: [Adınız] | <time datetime="2025-10-07">7 Ekim 2025</time></p>
-        </header>
-        
-        <section class="post-content">
-            <p>Giriş paragrafı: Konuyu kısaca tanıtın...</p>
+    <main class="article-page">
+        <article class="post">
             
-            <h2>Alt Başlık 1: Detaylara Dalış</h2>
-            <p>Bu kısımda argümanlarınızı destekleyen metinler yer alacak.</p>
+            <header class="post-header">
+                <h1>Yazının Etkileyici Ana Başlığı Burada Olacak</h1>
+                <p class="post-meta">Yazar: [Adınız] | <time datetime="2025-10-07">7 Ekim 2025</time></p>
+            </header>
             
-            <pre><code>
-                // Örnek kod bloğu
-                function merhaba() {
-                    console.log("Merhaba Dünya!");
-                }
-            </code></pre>
-            
-            <blockquote>
-                "İnsanlar, bu platformda fikirlerini özgürce beyan edebilmeli." - [Kişi Adı]
-            </blockquote>
-        </section>
+            <section class="post-content">
+                <p>Giriş paragrafı: Konuyu kısaca tanıtın...</p>
+                
+                <h2>Alt Başlık 1: Detaylara Dalış</h2>
+                <p>Bu kısımda argümanlarınızı destekleyen metinler yer alacak. Projeniz artık bir tartışma platformu haline geldi. Disqus ile yorumları bekleyebilirsiniz.</p>
+                
+                <pre><code>
+                    // Örnek kod bloğu
+                    function merhaba() {
+                        console.log("Merhaba Dünya!");
+                    }
+                </code></pre>
+                
+                <blockquote>
+                    "İnsanlar, bu platformda fikirlerini özgürce beyan edebilmeli." - [Kişi Adı]
+                </blockquote>
+            </section>
 
-        <section class="comments-section">
-            <h2>Tartışma Başlasın! (Yorumlar)</h2>
-            <div class="comment-placeholder">
-                <p>Yorum sistemi bu alana gelecektir. Şimdilik burayı CSS ile yorum kartları gibi tasarlayalım.</p>
-                <button>Yorum Yapmak İçin Tıklayın</button>
-            </div>
-            
-        </section>
+            <section id="comments" class="comments-section">
+                
+                <div id="disqus_thread"></div>
+                <script>
+                    var disqus_config = function () {
+                        // Her yazının benzersiz bir kimliği olmalı
+                        this.page.url = window.location.href;  
+                        this.page.identifier = window.location.pathname; 
+                    };
+                    (function() {
+                        var d = document, s = d.createElement('script');
+                        // BURAYI KENDİ KISA ADINIZLA DEĞİŞTİRİN
+                        s.src = 'https://[SİZİN-DISQUS-SHORTNAME].disqus.com/embed.js'; 
+                        s.setAttribute('data-timestamp', +new Date());
+                        (d.head || d.body).appendChild(s);
+                    })();
+                </script>
+                <noscript>Lütfen yorumları görmek için JavaScript'i etkinleştirin.</noscript>
+            </section>
 
-    </article>
-</main>
+        </article>
+    </main>
 
-<footer>
-    <p>&copy; 2025 Platform Adı. Tüm Hakları Saklıdır.</p>
-</footer>
+    <footer>
+        <p>&copy; 2025 Platform Adı. Tüm Hakları Saklıdır.</p>
+    </footer>
+    
+    <script src="../scripts.js" defer></script>
+</body>
+</html>
