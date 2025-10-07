@@ -49,16 +49,16 @@
 
             <section id="comments" class="comments-section">
                 
-                <div id="disqus_thread"></div>
+                <div id="disqus_thread"></div> 
+                
                 <script>
                     var disqus_config = function () {
-                        // Her yazının benzersiz bir kimliği olmalı
                         this.page.url = window.location.href;  
                         this.page.identifier = window.location.pathname; 
                     };
                     (function() {
                         var d = document, s = d.createElement('script');
-                        // BURAYI KENDİ KISA ADINIZLA DEĞİŞTİRİN
+                        // KENDİ KISA ADINIZLA DEĞİŞTİRİN
                         s.src = 'https://tartisma-blogu.disqus.com/embed.js'; 
                         s.setAttribute('data-timestamp', +new Date());
                         (d.head || d.body).appendChild(s);
@@ -74,6 +74,6 @@
         <p>&copy; 2025 Platform Adı. Tüm Hakları Saklıdır.</p>
     </footer>
     
-    <script src="../scripts.js" defer></script>
+    <script src="../scripts.js" defer></script> 
 </body>
 </html>
