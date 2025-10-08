@@ -634,3 +634,30 @@ body.dark-theme .post-meta {
         padding: 10px;
     }
 }
+/* Scroll-to-Top Butonu Stili */
+#scrollToTopBtn {
+    display: none; /* Başlangıçta gizle */
+    position: fixed; /* Sabit pozisyon */
+    bottom: 25px; /* Alttan 25px */
+    right: 25px; /* Sağdan 25px */
+    z-index: 99; /* Diğer her şeyin üstünde */
+    border: none;
+    outline: none;
+    background-color: var(--color-accent);
+    color: white;
+    cursor: pointer;
+    padding: 15px 20px;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    line-height: 1;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: background-color 0.3s;
+}
+
+#scrollToTopBtn:hover {
+    background-color: #0056b3;
+}
+/* Karanlık mod uyumu */
+body.dark-theme #scrollToTopBtn {
+    background-color: var(--color-accent);
+}

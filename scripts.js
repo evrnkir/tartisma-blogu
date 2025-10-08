@@ -22,3 +22,22 @@ function toggleTheme() {
         document.body.classList.add('dark-theme');
     }
 })();
+// Scroll-to-Top Butonu İşlevi
+const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+// Kullanıcı 300px aşağı kaydırınca butonu göster
+window.onscroll = function() {
+    if (document.body.scrollTop > 300 || document.documentElement.scrollTop > 300) {
+        scrollToTopBtn.style.display = "block";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+};
+
+// Butona tıklandığında sayfanın en üstüne kaydır
+scrollToTopBtn.addEventListener('click', function() {
+    window.scrollTo({
+        top: 0,
+        behavior: 'smooth' // Yumuşak kaydırma
+    });
+});
