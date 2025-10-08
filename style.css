@@ -119,11 +119,13 @@ header {
 }
 
 .post-meta {
-    color: var(--color-secondary);
+    /* Okuma süresi güncellemeleri */
     font-size: 0.95rem;
+    color: var(--color-secondary);
     margin-bottom: 30px;
     border-bottom: 1px solid #eee;
     padding-bottom: 15px;
+    border-bottom: 1px solid var(--color-background); /* Dark mode uyumu için değiştirildi */
 }
 
 .post-content h2 {
@@ -166,11 +168,6 @@ pre {
     text-align: left;
 }
 
-/* Disqus entegre edildiği için önceki yer tutucuyu gizliyoruz */
-.comment-placeholder {
-    display: none; 
-}
-
 
 /* 6. ANA SAYFA VE KAHRAMAN (HERO) BÖLÜMÜ */
 .home-page {
@@ -188,17 +185,17 @@ pre {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     transition: background-color 0.3s, box-shadow 0.3s;
     
-    /* YENİ: Hero Section Arka Plan Görseli */
-    background-image: url('assets/images/hero-background.jpg'); /* Görsel yolu */
+    /* Hero Section Arka Plan Görseli */
+    background-image: url('assets/images/hero-background.jpg'); 
     background-size: cover;
     background-position: center;
-    color: white; /* Metin rengini beyaza çevir */
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Okunurluk için gölge */
-    position: relative; /* Overlay için */
-    overflow: hidden; /* Overlay'ın dışarı taşmasını engelle */
+    color: white; 
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); 
+    position: relative; 
+    overflow: hidden; 
 }
 
-/* YENİ: Hero Section İçin Opaklık Katmanı (Dark Overlay) */
+/* Hero Section İçin Opaklık Katmanı (Dark Overlay) */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -206,17 +203,17 @@ pre {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.5); /* %50 siyahlık */
+    background-color: rgba(0, 0, 0, 0.5); 
     z-index: 1;
 }
 
 .hero-section h1, .hero-section p {
-    position: relative; /* İçeriği overlay'in üstüne çıkar */
+    position: relative; 
     z-index: 2;
-    color: white; /* Metin rengini beyaza sabitle */
+    color: white; 
 }
 .hero-section p {
-    color: rgba(255, 255, 255, 0.9); /* Daha açık beyaz */
+    color: rgba(255, 255, 255, 0.9); 
 }
 
 
@@ -277,12 +274,50 @@ pre {
     color: var(--color-accent);
 }
 
-/* 6.5 ARŞİV SAYFASI VE KART STİLLERİ (YENİLENMİŞ, PROFESYONEL) */
+/* 6.5 ARŞİV SAYFASI VE KART STİLLERİ (KATEGORİZASYON DAHİL) */
 .archive-page {
     max-width: 1100px;
     margin: 40px auto;
     padding: 0 20px;
 }
+
+.archive-head {
+    text-align: center;
+    margin-bottom: 40px;
+}
+.archive-head h1 {
+    font-size: 2.5rem;
+    margin-bottom: 5px;
+}
+.archive-head p {
+    color: var(--color-secondary);
+    font-size: 1.1rem;
+    margin-bottom: 25px;
+}
+.category-filter {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+.filter-btn {
+    padding: 8px 15px;
+    border: 1px solid var(--color-secondary);
+    background-color: transparent;
+    color: var(--color-primary);
+    border-radius: 20px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: 500;
+}
+.filter-btn:hover {
+    background-color: var(--color-background);
+}
+.filter-btn.active {
+    background-color: var(--color-accent);
+    color: white;
+    border-color: var(--color-accent);
+}
+
 
 .archive-list {
     display: grid;
@@ -294,28 +329,27 @@ pre {
 .archive-card {
     /* Yeni profesyonel görünüm */
     background-color: var(--color-light-bg);
-    border-radius: 12px; /* Köşeleri daha yumuşak */
-    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08); /* Daha belirgin gölge */
-    overflow: hidden; /* Kenarlıklar için */
+    border-radius: 12px; 
+    box-shadow: 0 8px 15px rgba(0, 0, 0, 0.08); 
+    overflow: hidden; 
     transition: transform 0.3s, box-shadow 0.3s, border 0.3s;
-    border: 1px solid #eee; /* Hafif bir çerçeve */
+    border: 1px solid #eee; 
 }
 
 .archive-card:hover {
-    transform: translateY(-5px); /* Daha güçlü vurgu */
+    transform: translateY(-5px); 
     box-shadow: 0 15px 25px rgba(0, 0, 0, 0.15);
-    border-color: var(--color-accent); /* Vurgu rengi ile çerçeve */
+    border-color: var(--color-accent); 
 }
 
 .archive-header {
-    /* Başlık ve meta bilgisi için iç padding */
     padding: 20px 20px 10px;
 }
 
 .archive-card h3 {
     font-size: 1.5rem;
     margin-bottom: 5px;
-    color: var(--color-primary); /* Başlık rengini birincil renge çevirdik */
+    color: var(--color-primary); 
     line-height: 1.2;
 }
 
@@ -329,12 +363,39 @@ pre {
 }
 
 .archive-content {
-    /* İçerik paragrafı için ayrı padding */
     padding: 0 20px 25px;
     color: var(--color-secondary);
     line-height: 1.7;
     font-size: 1rem;
 }
+
+/* Makale Kartı Üzerindeki Kategori Etiketleri */
+.category-tag {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-size: 0.75rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: white;
+    margin: 0 20px 15px;
+    letter-spacing: 0.5px;
+}
+
+/* Kategori Renkleri */
+.tag-kodlama {
+    background-color: #007bff; /* Mavi */
+}
+.tag-finans {
+    background-color: #28a745; /* Yeşil */
+}
+.tag-felsefe {
+    background-color: #6f42c1; /* Mor */
+}
+.tag-tarih {
+    background-color: #fd7e14; /* Turuncu */
+}
+
 
 /* 7. FOOTER */
 footer {
@@ -369,11 +430,11 @@ footer {
     border-radius: 50%;
     margin: 0 auto 15px;
     border: 3px solid var(--color-accent);
-    /* YENİ: Avatar görseli */
-    background-image: url('../assets/images/author-avatar.jpg'); /* Yazar avatar görsel yolu */
+    /* Avatar görseli */
+    background-image: url('../assets/images/author-avatar.jpg'); 
     background-size: cover;
     background-position: center;
-    background-color: var(--color-accent); /* Görsel yüklenmezse varsayılan renk */
+    background-color: var(--color-accent); 
 }
 
 .author-card h3 {
@@ -430,11 +491,11 @@ body.dark-theme .archive-card {
 
 /* Dark Mode Hero Section'ı Güncelle */
 body.dark-theme .hero-section {
-    background-color: #0d0d0d; /* Daha koyu bir başlangıç */
+    background-color: #0d0d0d; 
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
 }
 body.dark-theme .hero-section::before {
-    background-color: rgba(0, 0, 0, 0.7); /* Daha koyu overlay */
+    background-color: rgba(0, 0, 0, 0.7); 
 }
 
 
@@ -477,6 +538,24 @@ body.dark-theme #theme-toggle {
     border-color: #666;
 }
 
+/* Karanlık Mod Kategori Filtresi ve Etiketler */
+body.dark-theme .filter-btn:hover {
+    background-color: #333;
+}
+body.dark-theme .filter-btn {
+    border-color: #666;
+    color: var(--color-primary);
+}
+body.dark-theme .filter-btn.active {
+    background-color: var(--color-accent);
+    color: white;
+    border-color: var(--color-accent);
+}
+body.dark-theme .post-meta {
+    border-bottom: 1px solid #333;
+}
+
+
 /* 10. MOBİL UYUMLULUK (Responsive Design) İyileştirmesi */
 @media (max-width: 768px) {
     /* Genel Düzeltmeler */
@@ -515,6 +594,16 @@ body.dark-theme #theme-toggle {
         grid-template-columns: 1fr;
         gap: 20px;
     }
+    /* Kategori Filtresi mobil uyum */
+    .category-filter {
+        flex-wrap: wrap;
+        gap: 5px;
+    }
+    .filter-btn {
+        padding: 6px 12px;
+        font-size: 0.8rem;
+    }
+
 
     /* Makale Sayfası İyileştirmesi (Sidebar İçin Yeni Kurallar) */
     .article-layout {
