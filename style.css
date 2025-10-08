@@ -187,19 +187,38 @@ pre {
     border-radius: 8px;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
     transition: background-color 0.3s, box-shadow 0.3s;
+    
+    /* YENİ: Hero Section Arka Plan Görseli */
+    background-image: url('assets/images/hero-background.jpg'); /* Görsel yolu */
+    background-size: cover;
+    background-position: center;
+    color: white; /* Metin rengini beyaza çevir */
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* Okunurluk için gölge */
+    position: relative; /* Overlay için */
+    overflow: hidden; /* Overlay'ın dışarı taşmasını engelle */
 }
 
-.hero-section h1 {
-    font-size: 3rem;
-    margin-bottom: 15px;
+/* YENİ: Hero Section İçin Opaklık Katmanı (Dark Overlay) */
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5); /* %50 siyahlık */
+    z-index: 1;
 }
 
+.hero-section h1, .hero-section p {
+    position: relative; /* İçeriği overlay'in üstüne çıkar */
+    z-index: 2;
+    color: white; /* Metin rengini beyaza sabitle */
+}
 .hero-section p {
-    font-size: 1.2rem;
-    color: var(--color-secondary);
-    max-width: 600px;
-    margin: 0 auto;
+    color: rgba(255, 255, 255, 0.9); /* Daha açık beyaz */
 }
+
 
 /* YAZI LİSTESİ VE KART DÜZENİ */
 .posts-list h2 {
@@ -348,9 +367,13 @@ footer {
     width: 80px;
     height: 80px;
     border-radius: 50%;
-    background-color: var(--color-accent); 
     margin: 0 auto 15px;
     border: 3px solid var(--color-accent);
+    /* YENİ: Avatar görseli */
+    background-image: url('../assets/images/author-avatar.jpg'); /* Yazar avatar görsel yolu */
+    background-size: cover;
+    background-position: center;
+    background-color: var(--color-accent); /* Görsel yüklenmezse varsayılan renk */
 }
 
 .author-card h3 {
@@ -398,13 +421,22 @@ body.dark-theme {
 
 body.dark-theme header,
 body.dark-theme .post,
-body.dark-theme .hero-section,
 body.dark-theme .post-card,
 body.dark-theme .author-card,
 body.dark-theme .archive-card { 
     background-color: var(--color-light-bg);
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); 
 }
+
+/* Dark Mode Hero Section'ı Güncelle */
+body.dark-theme .hero-section {
+    background-color: #0d0d0d; /* Daha koyu bir başlangıç */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.7);
+}
+body.dark-theme .hero-section::before {
+    background-color: rgba(0, 0, 0, 0.7); /* Daha koyu overlay */
+}
+
 
 body.dark-theme .post-card:hover {
     box-shadow: 0 10px 25px rgba(0, 0, 0, 0.7);
